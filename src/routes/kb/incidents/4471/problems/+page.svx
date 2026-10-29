@@ -44,8 +44,8 @@ and intake's tag disagrees with the cause on dozens of reports.
 
 ## How this page counts
 
-The table counts the way the desk's cause table does: the desk's own `causeOf` over the unique
-reports in #4471. The `oneDayMove` reports get their own row and stay counted where they're
+The table runs the desk's own `causeOf` over the reports in #4471 as they were exported, every
+row of `reports-4471.json`. The `oneDayMove` reports get their own row and stay counted where they're
 filed. Nothing on this page is typed in.
 
 <RenderStamp {signature} />

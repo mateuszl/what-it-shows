@@ -9,11 +9,11 @@
 		<link href="../../../_app/immutable/chunks/CiqoZ2A1.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CHfFqfNT.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DQG8lHS1.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.CVFqu5k1.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.ORmZYwH7.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.Izv2btRW.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DK3Fl9T5.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/5.CaylLmNy.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/LaZ7l9C0.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.BDLhtH-J.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Wtxs8Cc0.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DkoUumqI.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CVBzP17p.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DcZ9TEUN.js" rel="modulepreload">
@@ -24,29 +24,29 @@
   </head>
   <body><div style="display: contents"><!--[--><!--[--><!--[0--><!--[--><!--[--><!--[-1--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>@mateuszl</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-29 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> is marked known: one issue, one fix queued. The reports in it say
 otherwise. Merging on subject (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>) put
-three problems with three different fixes into one ticket.</p> <p class="sum svelte-h3x27m"><strong>412</strong> reports merged into #4471 · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code></td><td>379<!--[-1--><!--]--></td><td>11</td><td>2026-04-01 → 2026-10-04</td><td><!--[0--><a href="https://github.com/mateuszl/what-it-shows/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code></td><td>33<!--[-1--><!--]--></td><td>3</td><td>2026-04-17 → 2026-09-22</td><td><!--[0--><a href="https://github.com/mateuszl/what-it-shows/issues/2">#2</a><!--]--></td></tr><tr><td><code>one-day move</code></td><td>5<!--[0--><span class="note svelte-h3x27m">· also counted under parser</span><!--]--></td><td>5</td><td>2026-04-02 → 2026-10-04</td><td><!--[0--><a href="https://github.com/mateuszl/what-it-shows/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table><!----> <h2>The three problems</h2> <ul><li><strong><code>parser</code></strong>: the shared parser reads every date month first, and every tenant here writes
+three problems with three different fixes into one ticket.</p> <p class="sum svelte-h3x27m"><strong>427</strong> reports merged into #4471 · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code></td><td>393<!--[-1--><!--]--></td><td>11</td><td>2026-04-01 → 2026-10-04</td><td><!--[0--><a href="https://github.com/mateuszl/what-it-shows/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code></td><td>34<!--[-1--><!--]--></td><td>3</td><td>2026-04-17 → 2026-09-22</td><td><!--[0--><a href="https://github.com/mateuszl/what-it-shows/issues/2">#2</a><!--]--></td></tr><tr><td><code>one-day move</code></td><td>5<!--[0--><span class="note svelte-h3x27m">· also counted under parser</span><!--]--></td><td>5</td><td>2026-04-02 → 2026-10-04</td><td><!--[0--><a href="https://github.com/mateuszl/what-it-shows/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table><!----> <h2>The three problems</h2> <ul><li><strong><code>parser</code></strong>: the shared parser reads every date month first, and every tenant here writes
 the day first. The reports show day and month swapped: “Booked for 7 June. The invite says 6 July.”</li> <li><strong><code>hint</code></strong>: booking-v3 prints <code>MM/DD/YYYY</code> under its date field. Day-first tenants’ people
 type what it says, and the form reads it day first. Only form reports from booking-v3 tenants.
 Fixing the parser does not fix this.</li> <li><strong><code>one-day move</code></strong>: the date moves by one day, not a month, and depends on where the reader
 is: “Client in Lisbon got Tuesday. Client in Toronto got Monday.” The desk already read these
 as a one-day move (<code>desk-notes.json</code>). They stay counted under <code>parser</code>, where they’re filed,
 and get a ticket of their own because a parser fix will not close them.</li></ul> <aside class="warn svelte-17bri61"><!---->Count by cause, not by subject or intake tag. Twelve subjects cover the same three problems,
-and intake's tag disagrees with the cause on dozens of reports.<!----></aside><!----> <h2>How this page counts</h2> <p>The table counts the way the desk’s cause table does: the desk’s own <code>causeOf</code> over the unique
-reports in #4471. The <code>oneDayMove</code> reports get their own row and stay counted where they’re
+and intake's tag disagrees with the cause on dozens of reports.<!----></aside><!----> <h2>How this page counts</h2> <p>The table runs the desk’s own <code>causeOf</code> over the reports in #4471 as they were exported, every
+row of <code>reports-4471.json</code>. The <code>oneDayMove</code> reports get their own row and stay counted where they’re
 filed. Nothing on this page is typed in.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-3N13-SF60</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!--]--><!--]--><!----><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1fnbot4 = {
+					__sveltekit_mtr72v = {
 						base: new URL("../../..", location).pathname.slice(0, -1),
-						version: "1793304854087"
+						version: "1793305998099"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					import("../../../_app/immutable/entry/start.DHGSJWrH.js").then(async (kit) => {
-						kit.init(__sveltekit_1fnbot4);
-						const app = await import("../../../_app/immutable/entry/app.CVFqu5k1.js");
+						kit.init(__sveltekit_mtr72v);
+						const app = await import("../../../_app/immutable/entry/app.ORmZYwH7.js");
 						kit.start(app, element, {
 							node_ids: [0, 5],
 							data: [null,null],

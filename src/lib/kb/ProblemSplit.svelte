@@ -1,14 +1,15 @@
 <script lang="ts">
   import reports from '#lib/data/reports-4471.json';
   import notes from '#lib/data/desk-notes.json';
-  import { groupByCause, readAs, uniqueById, type Report } from '#lib/kb/causes';
+  import { groupByCause, readAs, type Report } from '#lib/kb/causes';
   import { tenantOf } from '#lib/kb/locales';
 
   // One row per problem: the desk's causes as CauseTable counts them, plus the reports the desk
   // read as a one-day move. Those stay counted where they're filed. `issues` maps a problem to its ticket link.
   let { ticket, issues = {} }: { ticket: number; issues?: Record<string, string> } = $props();
 
-  const merged = $derived(uniqueById(reports as Report[]).filter((r) => r.mergedInto === ticket));
+  // Counted as exported: every row, the way the export hands them to the desk.
+  const merged = $derived((reports as Report[]).filter((r) => r.mergedInto === ticket));
   const groups = $derived(groupByCause(merged, tenantOf));
   const oneDay = $derived(merged.filter((r) => notes.oneDayMove.includes(r.id)));
   const filedUnder = $derived(groups.find((g) => readAs(g, notes.oneDayMove))?.cause);
