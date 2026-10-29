@@ -4,7 +4,7 @@ title: '#4471 · three problems, not one'
 owner: '@mateuszl'
 status: proposed
 reviewed: 2026-10-29
-signature: '@mateuszl'
+signature: 'v1.eyJzdWIiOiIxOTY2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzMDc1NjAsImV4cCI6MTc5MzM5Mzk2MH0.zYm-TmnZupY7Lt3yZRHurrufcIi0hSFvK0oRg85ZTYc'
 ---
 
 <script>
