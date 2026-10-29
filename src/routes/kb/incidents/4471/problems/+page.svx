@@ -34,7 +34,8 @@ three problems with three different fixes into one ticket.
   Fixing the parser does not fix this.
 - **`one-day move`**: the date moves by one day, not a month, and depends on where the reader
   is: "Client in Lisbon got Tuesday. Client in Toronto got Monday." The desk already read these
-  as a one-day move (`desk-notes.json`), but the cause table still counts them under `parser`.
+  as a one-day move (`desk-notes.json`). They stay counted under `parser`, where they're filed,
+  and get a ticket of their own because a parser fix will not close them.
 
 <Callout kind="warn">
 Count by cause, not by subject or intake tag. Twelve subjects cover the same three problems,
@@ -43,7 +44,8 @@ and intake's tag disagrees with the cause on dozens of reports.
 
 ## How this page counts
 
-The table runs the desk's own `causeOf` over the unique reports in #4471, and takes the
-`oneDayMove` reports out of the cause they were filed under. Nothing on this page is typed in.
+The table counts the way the desk's cause table does: the desk's own `causeOf` over the unique
+reports in #4471. The `oneDayMove` reports get their own row and stay counted where they're
+filed. Nothing on this page is typed in.
 
 <RenderStamp {signature} />
